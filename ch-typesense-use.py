@@ -15,6 +15,25 @@ from local_agno.vectordb.typesense import TypesenseDb, SearchType
 from agno.tools.knowledge import KnowledgeTools
 from agno.models.anthropic import Claude
 
+from typing import Optional
+
+# Get auth credentials from environment variables
+AUTH_USERNAME = os.environ.get('CHAINLIT_AUTH_USERNAME')
+AUTH_PASSWORD = os.environ.get('CHAINLIT_AUTH_PASSWORD')
+
+@cl.password_auth_callback
+def auth_callback(username: str, password: str):
+    # Use environment variables for authentication
+    if not AUTH_USERNAME or not AUTH_PASSWORD:
+        raise ValueError("Authentication credentials not set in environment variables")
+    
+    if (username, password) == (AUTH_USERNAME, AUTH_PASSWORD):
+        return cl.User(
+            identifier=username, 
+            metadata={"role": "admin", "provider": "credentials"}
+        )
+    return None
+
 # Get Typesense info from environment variables
 typesense_host = os.environ.get('TYPESENSE_HOST')
 typesense_port = os.environ.get('TYPESENSE_PORT')

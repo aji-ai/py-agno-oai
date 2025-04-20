@@ -100,6 +100,12 @@ chainlit run ch-pg-session-state.py
 This is unused:
 - `TYPESENSE_COLLECTION_NAME`: Name of your Typesense collection
 
+### Chainlit Authentication
+- `CHAINLIT_AUTH_USERNAME`: Username for Chainlit authentication
+- `CHAINLIT_AUTH_PASSWORD`: Password for Chainlit authentication
+- `CHAINLIT_AUTH_SECRET` (from typing chainlit create-secret)
+
+
 Example Typesense configuration:
 ```bash
 # Typesense Configuration
@@ -110,10 +116,6 @@ export TYPESENSE_PROTOCOL="http"
 This is unused:
 export TYPESENSE_COLLECTION_NAME="your_collection_name"
 ```
-
-### Optional LLM API Keys
-- `ANTHROPIC_API_KEY`: For Anthropic Claude models
-  - Get from: [Anthropic Console](https://console.anthropic.com/)
 
 ## Development
 
