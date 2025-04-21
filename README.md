@@ -65,10 +65,74 @@ echo $OPENAI_API_KEY
 
 ## Available Scripts
 
+### Adding knowledge to the system
+Add a directory of files
+```bash
+python py-agno-typesense-knowledge.py --input <path>
+```
+
+Append files
+```bash
+python py-agno-typesense-knowledge.py --input <path> --append
+```
+
+Start over again
+```bash
+python py-agno-typesense-knowledge.py --input <path> --recreate
+```
+
+Test it out with current knowledge
+### Adding knowledge to the system
+Add a directory of files
+```bash
+python py-agno-typesense-knowledge.py --input <path>
+```
+
+Append files
+```bash
+python py-agno-typesense-knowledge.py --input <path> --append
+```
+
+Start over again
+```bash
+python py-agno-typesense-knowledge.py --input <path> --recreate
+```
+
+### Adding knowledge to the system
+Add a directory of files
+```bash
+python py-agno-typesense-knowledge.py --input <path>
+```
+
+Append files
+```bash
+python py-agno-typesense-knowledge.py --input <path> --append
+```
+
+Start over again
+```bash
+python py-agno-typesense-knowledge.py --input <path> --recreate
+```
+
+Test it out with what's in memory
+```bash
+python py-agno-typesense-knowledge.py --input .
+```
+
+Specify the default collection to something else besides 'example-docs'
+```bash
+python py-agno-typesense-knowledge.py --collection <target-collection-name> (and add the other flags)
+```
+
 ### Basic Chainlit Agent
 Run a simple Chainlit chat interface:
 ```bash
 chainlit run ch-basicagno.py
+```
+
+Run it with the local typesense server (running with brew)
+```bash
+chainlit run ch-basicagno.py --localts
 ```
 
 ### PostgreSQL Storage Agent
